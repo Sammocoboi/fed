@@ -30,8 +30,9 @@ def get_words_nltk_unique(text):
         
     return wowrdslist
 with open("C:\\Users\\Student\\Desktop\\Пушкин Александр. Капитанская дочка - royallib.com.txt","r") as f:
-    words = get_words_nltk(f.read())
-    wordsunique=get_words_nltk_unique(f.read())
+    text = f.read()
+    words = get_words_nltk(text)
+    wordsunique=get_words_nltk_unique(text)
 def topkqent(words,k):
     freq = Counter(words)
     heap = []
@@ -56,12 +57,14 @@ wordscount = topkqent(words,10)
 print(wordscount)
 
 with open("C:\\Users\\Student\\Desktop\\Пушкин Александр. Евгений Онегин - royallib.com.txt","r") as f:
-    words += get_words_nltk(f.read())
-    wordsunique+=get_words_nltk_unique(f.read())
+    text = f.read()
+    words += get_words_nltk(text)
+    wordsunique+=get_words_nltk_unique(text)
 
 with open("C:\\Users\\Student\\Desktop\\Пушкин Александр. Дубровский - royallib.com.txt","r") as f:
-    words += get_words_nltk(f.read())
-    wordsunique+=get_words_nltk_unique(f.read())
+    text = f.read()
+    words += get_words_nltk(text)
+    wordsunique+=get_words_nltk_unique(text)
     
 print("вов всех 3 книгах")
 wordscount2 = topkqent(words,10)
